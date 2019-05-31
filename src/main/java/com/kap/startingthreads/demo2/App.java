@@ -23,8 +23,11 @@ class Runner implements Runnable {
 public class App {
 
     public static void main(String[] args) {
-        Runner runner1 = new Runner();
-        runner1.start();
+        Thread t1 = new Thread(new Runner());
+        Thread t2 = new Thread(new Runner());
+
+        t1.start();
+        t2.start();
     }
 
 
